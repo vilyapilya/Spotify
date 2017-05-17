@@ -14,8 +14,7 @@ import SessionFormContainer from './session_components/SessionFormContainer.js';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div class="outer">
-    
+  <div className="outer">
     <Link to="/" className="header-link">
          <h1>Home</h1>
     </Link>

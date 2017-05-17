@@ -13053,7 +13053,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
   return _react2.default.createElement(
     'div',
-    { 'class': 'outer' },
+    { className: 'outer' },
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/', className: 'header-link' },
@@ -13095,15 +13095,21 @@ var sessionLinks = function sessionLinks() {
     'nav',
     { className: 'login-signup' },
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/login' },
-      'Login'
+      'div',
+      { className: 'buttons' },
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/login', className: 'loginLink' },
+        'Login'
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/signup', className: 'signupLink' },
+        'Sign up'
+      )
     ),
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/signup' },
-      'Sign up!'
-    )
+    _react2.default.createElement('img', { className: 'bg-img', src: 'assets/reading.jpeg' })
   );
 };
 
