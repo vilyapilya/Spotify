@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
       signin(@user)
       render :show
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: ["Invalid username/password combination"]
     end
   end
 
@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
       signout
       render {}
     else
-      render( json: ["Nobody signed in"],status: 404)
+      render json: ["Nobody signed in"]
     end
   end
 end
