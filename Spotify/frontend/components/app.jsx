@@ -14,9 +14,10 @@ import SessionFormContainer from './session_components/SessionFormContainer.js';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div class="outer">
+    
     <Link to="/" className="header-link">
-         <h1>Test</h1>
+         <h1>Home</h1>
     </Link>
     <GreetingContainer />
     <Route path="/login" component={SessionFormContainer} />
