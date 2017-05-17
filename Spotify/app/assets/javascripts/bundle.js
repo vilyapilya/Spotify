@@ -12175,6 +12175,10 @@ var _reactRedux = __webpack_require__(37);
 
 var _reactRouterDom = __webpack_require__(38);
 
+var _greeting_container = __webpack_require__(366);
+
+var _greeting_container2 = _interopRequireDefault(_greeting_container);
+
 var _SessionFormContainer = __webpack_require__(114);
 
 var _SessionFormContainer2 = _interopRequireDefault(_SessionFormContainer);
@@ -12188,14 +12192,15 @@ var App = function App() {
     'div',
     null,
     _react2.default.createElement(
-      'header',
-      null,
+      _reactRouterDom.Link,
+      { to: '/', className: 'header-link' },
       _react2.default.createElement(
         'h1',
         null,
-        'test'
+        'Test'
       )
     ),
+    _react2.default.createElement(_greeting_container2.default, null),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _SessionFormContainer2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _SessionFormContainer2.default })
   );
@@ -30961,6 +30966,108 @@ function toPlainObject(value) {
 
 module.exports = toPlainObject;
 
+
+/***/ }),
+/* 365 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(38);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var sessionLinks = function sessionLinks() {
+  return _react2.default.createElement(
+    'nav',
+    { className: 'login-signup' },
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/login' },
+      'Login'
+    ),
+    '\xA0or\xA0',
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/signup' },
+      'Sign up!'
+    )
+  );
+};
+
+var personalGreeting = function personalGreeting(currentUser, logout) {
+  return _react2.default.createElement(
+    'hgroup',
+    { className: 'header-group' },
+    _react2.default.createElement(
+      'h2',
+      { className: 'header-name' },
+      'Hi, ',
+      currentUser.username,
+      '!'
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'header-button', onClick: logout },
+      'Log Out'
+    )
+  );
+};
+
+var Greeting = function Greeting(_ref) {
+  var currentUser = _ref.currentUser,
+      logout = _ref.logout;
+  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
+};
+
+exports.default = Greeting;
+
+/***/ }),
+/* 366 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(37);
+
+var _session_actions = __webpack_require__(112);
+
+var _greeting = __webpack_require__(365);
+
+var _greeting2 = _interopRequireDefault(_greeting);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session;
+  return {
+    currentUser: session.currentUser
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch((0, _session_actions.logout)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
 
 /***/ })
 /******/ ]);
