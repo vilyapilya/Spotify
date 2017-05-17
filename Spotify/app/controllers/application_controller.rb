@@ -17,14 +17,14 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def signIn(user)
-    user.reset_session_token!
+  def signin(user)
+    user.reset_session_token
     session[:session_token] = user.session_token
     @current_user = user
   end
 
-  def signOut
-    current_user.reset_session_token!
+  def signout
+    current_user.reset_session_token
     session[:session_token] = nil
     @current_user = nil
   end

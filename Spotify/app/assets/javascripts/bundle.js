@@ -12292,7 +12292,8 @@ var SessionForm = function (_React$Component) {
 
     _this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
@@ -12387,6 +12388,17 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement(
               'label',
               null,
+              'Email:',
+              _react2.default.createElement('input', { type: 'text',
+                value: this.state.email,
+                onChange: this.update('email'),
+                className: 'login-input'
+              })
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'label',
+              null,
               'Password:',
               _react2.default.createElement('input', { type: 'password',
                 value: this.state.password,
@@ -12430,10 +12442,14 @@ var _store = __webpack_require__(110);
 
 var _store2 = _interopRequireDefault(_store);
 
+var _session_api_util = __webpack_require__(118);
+
+var APIUtil = _interopRequireWildcard(_session_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//Components
-//React
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
   var store = void 0;
@@ -12444,9 +12460,16 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = (0, _store2.default)();
   }
-
+  //TESTING
+  window.signup = APIUtil.signup;
+  //
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
+
+//testing
+
+//Components
+//React
 
 /***/ }),
 /* 117 */
@@ -12517,7 +12540,7 @@ var login = exports.login = function login(user) {
 var signup = exports.signup = function signup(user) {
   return $.ajax({
     method: 'POST',
-    url: '/api/user',
+    url: '/api/users',
     data: user
   });
 };
