@@ -15,8 +15,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <h1>Test</h1>
-  </div>
+   <header>
+     <h1>test</h1>
+   </header>
+
+   <Route path="/login" component={SessionFormContainer} />
+   <Route path="/signup" component={SessionFormContainer} />
+ </div>
 );
 
 export default App;

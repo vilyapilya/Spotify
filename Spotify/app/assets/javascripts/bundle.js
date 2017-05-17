@@ -12188,10 +12188,16 @@ var App = function App() {
     'div',
     null,
     _react2.default.createElement(
-      'h1',
+      'header',
       null,
-      'Test'
-    )
+      _react2.default.createElement(
+        'h1',
+        null,
+        'test'
+      )
+    ),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _SessionFormContainer2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _SessionFormContainer2.default })
   );
 };
 
