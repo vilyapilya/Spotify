@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -7,8 +7,8 @@ const sessionLinks = () => (
       <Link to="/login" className="loginLink">Login</Link>
       <br/>
       <Link to="/signup" className="signupLink">Sign up</Link>
+      <img className="bg-img" src="assets/reading.jpeg"/>
     </div>
-    <img className="bg-img" src="assets/reading.jpeg"/>
   </nav>
 );
 

@@ -1,6 +1,19 @@
 .login-form-container{
   position: absolute;
-  margin-left: 25%;
-  margin-bottom: 25%;
-  background-color: red;
+  margin-left: 35%;
+  margin-bottom: 30%;
+  margin-top: 2%;
+  z-index: 99999;
+  width: 500px;
+  height: 800px;
+  text-align: center;
+}
+
+.login-input{
+  height: 30px;
+  width: 100%;
+}
+
+.login-input:placeholder{
+  
 }

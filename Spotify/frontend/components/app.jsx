@@ -18,9 +18,10 @@ const App = () => (
     <Link to="/" className="header-link">
          <h1>Home</h1>
     </Link>
-    <GreetingContainer />
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <Route exact path="/" component={GreetingContainer} />
+    <Route exact path="/login" component={SessionFormContainer} />
+    <Route exact path="/signup" component={SessionFormContainer} />
+
  </div>
 );
 

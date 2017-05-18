@@ -13063,9 +13063,9 @@ var App = function App() {
         'Home'
       )
     ),
-    _react2.default.createElement(_greeting_container2.default, null),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _SessionFormContainer2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _SessionFormContainer2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _greeting_container2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/login', component: _SessionFormContainer2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signup', component: _SessionFormContainer2.default })
   );
 };
 
@@ -13107,9 +13107,9 @@ var sessionLinks = function sessionLinks() {
         _reactRouterDom.Link,
         { to: '/signup', className: 'signupLink' },
         'Sign up'
-      )
-    ),
-    _react2.default.createElement('img', { className: 'bg-img', src: 'assets/reading.jpeg' })
+      ),
+      _react2.default.createElement('img', { className: 'bg-img', src: 'assets/reading.jpeg' })
+    )
   );
 };
 
@@ -13333,7 +13333,6 @@ var SessionForm = function (_React$Component) {
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit, className: 'login-form-box' },
-          'Welcome to BenchBnB!',
           _react2.default.createElement('br', null),
           'Please ',
           this.props.formType,
@@ -13347,33 +13346,33 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement(
               'label',
               null,
-              'Username:',
               _react2.default.createElement('input', { type: 'text',
                 value: this.state.username,
                 onChange: this.update('username'),
-                className: 'login-input'
+                className: 'login-input',
+                placeholder: 'Username'
               })
             ),
             _react2.default.createElement('br', null),
             _react2.default.createElement(
               'label',
               null,
-              'Email:',
               _react2.default.createElement('input', { type: 'text',
                 value: this.state.email,
                 onChange: this.update('email'),
-                className: 'login-input'
+                className: 'login-input',
+                placeholder: 'Email'
               })
             ),
             _react2.default.createElement('br', null),
             _react2.default.createElement(
               'label',
               null,
-              'Password:',
               _react2.default.createElement('input', { type: 'password',
                 value: this.state.password,
                 onChange: this.update('password'),
-                className: 'login-input'
+                className: 'login-input',
+                placeholder: 'Password'
               })
             ),
             _react2.default.createElement('br', null),
