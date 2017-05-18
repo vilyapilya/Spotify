@@ -7,7 +7,6 @@ const sessionLinks = () => (
       <Link to="/login" className="loginLink">Login</Link>
       <br/>
       <Link to="/signup" className="signupLink">Sign up</Link>
-      <img className="bg-img" src="assets/reading.jpeg"/>
     </div>
   </nav>
 );

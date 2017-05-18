@@ -1,19 +1,52 @@
 .login-form-container{
-  position: absolute;
-  margin-left: 35%;
+  // position: absolute;
+  position: fixed;
+  margin-left: 30%;
   margin-bottom: 30%;
-  margin-top: 2%;
+  margin-top: 5%;
   z-index: 99999;
   width: 500px;
   height: 800px;
   text-align: center;
+  font-family: 'Inconsolata', monospace;
 }
 
 .login-input{
-  height: 30px;
+  height: 50px;
   width: 100%;
+  margin: 10px;
+  font-size: 27px;
+  font-family: inherit;
 }
 
-.login-input:placeholder{
-  
+
+.login-input::placeholder{
+  font-size: 18px;
+}
+
+#sessionSubmit{
+  height: 55px;
+  margin: 10px;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 30px;
+  font-family: 'Inconsolata', monospace;
+  background-color: #0eead4;
+}
+#header{
+  font-size: 35px;
+  position: relative;
+  margin-top: 80px;
+}
+.error-list{
+  list-style: none;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  margin-top: 3%;
+  margin-left: -5%;
+}
+#error{
+  color: red;
+  font-size: 18px;
 }

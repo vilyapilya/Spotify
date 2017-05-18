@@ -1,0 +1,29 @@
+.top{
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  opacity: 0.3;
+}
+.header-link{
+  position: absolute;
+  margin-top: -4%;
+  margin-left: 1%;;
+  color: white;
+}
+.buttons{
+  margin-left: 80%;
+  margin-top: 2%;
+  width: 200px;
+  font-size: 25px;
+  display: flex;
+  // background-color: white;
+  justify-content: space-between;
+  font-family: 'Inconsolata', monospace;
+}
+.loginLink{
+  color: white;
+}
+.signupLink{
+  color: white;
+}
