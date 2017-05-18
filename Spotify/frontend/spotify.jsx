@@ -6,7 +6,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //testing
-import * as APIUtil from './util/session_api_util'
+import * as APIUtil from './util/audiobooks_api_utl.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   //TESTING
-  window.signup = APIUtil.signup;
+  window.createAudioBook = APIUtil.createAudioBook;
   //
   ReactDOM.render(<Root store={store} />, root);
 });

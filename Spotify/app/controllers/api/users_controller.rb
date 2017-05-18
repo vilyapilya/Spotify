@@ -4,7 +4,9 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    #testing
     @user = User.first
+    #testing
     render :show
   end
 

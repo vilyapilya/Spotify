@@ -13495,9 +13495,9 @@ var _store = __webpack_require__(141);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _session_api_util = __webpack_require__(82);
+var _audiobooks_api_utl = __webpack_require__(369);
 
-var APIUtil = _interopRequireWildcard(_session_api_util);
+var APIUtil = _interopRequireWildcard(_audiobooks_api_utl);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -13514,7 +13514,7 @@ document.addEventListener('DOMContentLoaded', function () {
     store = (0, _store2.default)();
   }
   //TESTING
-  window.signup = APIUtil.signup;
+  window.createAudioBook = APIUtil.createAudioBook;
   //
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -31202,6 +31202,53 @@ var FrontDoor = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = FrontDoor;
+
+/***/ }),
+/* 369 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchAudioBooks = exports.fetchAudioBooks = function fetchAudioBooks(book) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/audiobooks',
+    data: book
+  });
+};
+
+var fetchAudionBook = exports.fetchAudionBook = function fetchAudionBook(id) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/audiobooks/' + id
+  });
+};
+
+var createAudioBook = exports.createAudioBook = function createAudioBook(book) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/audiobooks',
+    data: { book: book }
+  });
+};
+var deleteAudioBook = exports.deleteAudioBook = function deleteAudioBook(id) {
+  return $.ajax({
+    method: 'DELTE',
+    url: 'api/audiobooks/' + id,
+    data: data
+  });
+};
+var editAudioBook = exports.editAudioBook = function editAudioBook(data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'api/audiobooks/',
+    data: data
+  });
+};
 
 /***/ })
 /******/ ]);
